@@ -437,6 +437,20 @@ body {
   gap: 16px;
 }
 
+.form-status {
+  min-height: 24px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.form-status.success {
+  color: var(--green);
+}
+
+.form-status.error {
+  color: var(--accent-deep);
+}
+
 label {
   display: grid;
   gap: 8px;

@@ -183,6 +183,7 @@
               method="POST"
               action="https://formspree.io/f/xojkdoae"
             >
+              <p class="form-status" role="status" aria-live="polite"></p>
               <label>
                 Full name
                 <input type="text" name="name" placeholder="Your name" required />
@@ -217,5 +218,38 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      const form = document.querySelector(".contact-form");
+      const statusEl = document.querySelector(".form-status");
+
+      if (form && statusEl) {
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          statusEl.textContent = "Sending...";
+          statusEl.classList.remove("success", "error");
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: new FormData(form),
+            });
+
+            if (response.ok) {
+              form.reset();
+              statusEl.textContent = "Thanks! Your message was sent.";
+              statusEl.classList.add("success");
+            } else {
+              statusEl.textContent = "Sorry, something went wrong. Try again.";
+              statusEl.classList.add("error");
+            }
+          } catch (error) {
+            statusEl.textContent = "Network error. Please try again.";
+            statusEl.classList.add("error");
+          }
+        });
+      }
+    </script>
   </body>
 </html>

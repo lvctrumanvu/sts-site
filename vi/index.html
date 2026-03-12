@@ -192,6 +192,7 @@
               method="POST"
               action="https://formspree.io/f/xojkdoae"
             >
+              <p class="form-status" role="status" aria-live="polite"></p>
               <label>
                 Họ và tên
                 <input type="text" name="name" placeholder="Nguyễn Văn A" required />
@@ -226,5 +227,38 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      const form = document.querySelector(".contact-form");
+      const statusEl = document.querySelector(".form-status");
+
+      if (form && statusEl) {
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          statusEl.textContent = "Đang gửi...";
+          statusEl.classList.remove("success", "error");
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: new FormData(form),
+            });
+
+            if (response.ok) {
+              form.reset();
+              statusEl.textContent = "Cảm ơn bạn! Thông tin đã được gửi.";
+              statusEl.classList.add("success");
+            } else {
+              statusEl.textContent = "Có lỗi xảy ra. Vui lòng thử lại.";
+              statusEl.classList.add("error");
+            }
+          } catch (error) {
+            statusEl.textContent = "Lỗi mạng. Vui lòng thử lại.";
+            statusEl.classList.add("error");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
