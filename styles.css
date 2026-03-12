@@ -1,0 +1,484 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  color-scheme: light;
+  --bg: #f8f4ee;
+  --bg-soft: #fff8f0;
+  --ink: #1b1a17;
+  --muted: #5b5a55;
+  --accent: #ba3b2e;
+  --accent-deep: #7e1f16;
+  --gold: #d8b062;
+  --green: #1c6b4b;
+  --shadow: 0 18px 45px rgba(27, 26, 23, 0.15);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #fff1e1, transparent 55%),
+    radial-gradient(circle at 20% 30%, rgba(216, 176, 98, 0.25), transparent 45%),
+    var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+
+.hero {
+  padding: 40px 8vw 80px;
+  background: linear-gradient(135deg, rgba(186, 59, 46, 0.08), transparent 50%),
+    linear-gradient(200deg, rgba(28, 107, 75, 0.12), transparent 55%);
+}
+
+.sub-hero {
+  padding: 40px 8vw 60px;
+  background: linear-gradient(145deg, rgba(28, 107, 75, 0.12), transparent 55%),
+    linear-gradient(200deg, rgba(186, 59, 46, 0.08), transparent 50%);
+}
+
+.sub-hero-content h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-mark {
+  font-family: "Fraunces", serif;
+  font-size: 24px;
+  letter-spacing: 4px;
+  background: var(--ink);
+  color: #fff7ec;
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.brand-title {
+  font-weight: 600;
+}
+
+.brand-sub {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.lang-link {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(27, 26, 23, 0.2);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin: 28px 0 24px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff7ec;
+  box-shadow: 0 10px 25px rgba(186, 59, 46, 0.35);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(186, 59, 46, 0.4);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(27, 26, 23, 0.2);
+  color: var(--ink);
+}
+
+.hero-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(27, 26, 23, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: -30% 40% auto auto;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(216, 176, 98, 0.45), transparent 70%);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pill {
+  background: rgba(28, 107, 75, 0.15);
+  color: var(--green);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.card-body h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.card-body p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.school-list {
+  display: grid;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.school-list a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.section {
+  padding: 0 8vw;
+}
+
+.section-head {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.section h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.program-grid,
+.school-grid,
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.program-card,
+.school-card,
+.schedule-card,
+.calendar-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(27, 26, 23, 0.08);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: float-in 0.8s ease both;
+}
+
+.calendar-embed {
+  padding: 16px;
+  align-items: center;
+}
+
+.calendar-embed iframe {
+  border-radius: 16px;
+  width: min(100%, 960px);
+  height: 600px;
+}
+
+.program-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.program-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.school-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.school-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.school-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.schedule-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.school-tag {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent-deep);
+}
+
+.inline-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.schedule {
+  padding-bottom: 40px;
+}
+
+.schedule-card ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.schedule-card li::before {
+  content: "•";
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+.contact {
+  padding-bottom: 80px;
+}
+
+.contact-card {
+  background: linear-gradient(130deg, rgba(186, 59, 46, 0.12), rgba(28, 107, 75, 0.12));
+  padding: 48px;
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+input,
+select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(27, 26, 23, 0.2);
+  background: #fff;
+  font-family: inherit;
+}
+
+.footer {
+  padding: 32px 8vw 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(27, 26, 23, 0.1);
+  color: var(--muted);
+}
+
+.footer strong {
+  color: var(--ink);
+}
+
+.footer-links {
+  display: grid;
+  gap: 6px;
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero,
+  .sub-hero {
+    padding: 32px 6vw 60px;
+  }
+
+  .section {
+    padding: 0 6vw;
+  }
+
+  .contact-card {
+    padding: 32px;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar-embed iframe {
+    height: 520px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
