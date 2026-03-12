@@ -187,25 +187,29 @@
                 sinh hoạt, chương trình đào luyện, và cơ hội phục vụ.
               </p>
             </div>
-            <form class="contact-form">
+            <form
+              class="contact-form"
+              method="POST"
+              action="https://formspree.io/f/xojkdoae"
+            >
               <label>
                 Họ và tên
-                <input type="text" placeholder="Nguyễn Văn A" />
+                <input type="text" name="name" placeholder="Nguyễn Văn A" required />
               </label>
               <label>
                 Email
-                <input type="email" placeholder="ban@sts.org" />
+                <input type="email" name="email" placeholder="ban@sts.org" required />
               </label>
               <label>
                 Trường quan tâm
-                <select>
+                <select name="school" required>
                   <option>LVS - La Vang Sáng</option>
                   <option>LVC - La Vang Chiều</option>
                   <option>MPS - Mt. Pleasant Sáng</option>
                   <option>MPC - Mt. Pleasant Chiều</option>
                 </select>
               </label>
-              <button type="button" class="btn primary">Gửi Thông Tin</button>
+              <button type="submit" class="btn primary">Gửi Thông Tin</button>
             </form>
           </div>
         </section>

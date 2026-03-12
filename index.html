@@ -178,25 +178,29 @@
                 formation programs, and service opportunities.
               </p>
             </div>
-            <form class="contact-form">
+            <form
+              class="contact-form"
+              method="POST"
+              action="https://formspree.io/f/xojkdoae"
+            >
               <label>
                 Full name
-                <input type="text" placeholder="Your name" />
+                <input type="text" name="name" placeholder="Your name" required />
               </label>
               <label>
                 Email
-                <input type="email" placeholder="team@sts.org" />
+                <input type="email" name="email" placeholder="team@sts.org" required />
               </label>
               <label>
                 School of interest
-                <select>
+                <select name="school" required>
                   <option>LVS - La Vang Morning</option>
                   <option>LVC - La Vang Afternoon</option>
                   <option>MPS - Mt. Pleasant Morning</option>
                   <option>MPC - Mt. Pleasant Afternoon</option>
                 </select>
               </label>
-              <button type="button" class="btn primary">Send</button>
+              <button type="submit" class="btn primary">Send</button>
             </form>
           </div>
         </section>
