@@ -10,6 +10,10 @@
   --accent-deep: #7e1f16;
   --gold: #d8b062;
   --green: #1c6b4b;
+  --lvs: #7a1f2b;
+  --lvc: #1f4fbf;
+  --mps: #0f2d62;
+  --mpc: #1f7a4a;
   --shadow: 0 18px 45px rgba(27, 26, 23, 0.15);
   --radius: 22px;
 }
@@ -355,6 +359,46 @@ body {
   color: var(--accent);
   font-weight: 600;
   text-decoration: none;
+}
+
+.school-card.lvs .school-tag,
+.school-list .lvs,
+.sub-hero.lvs .school-title {
+  color: var(--lvs);
+}
+
+.school-card.lvc .school-tag,
+.school-list .lvc,
+.sub-hero.lvc .school-title {
+  color: var(--lvc);
+}
+
+.school-card.mps .school-tag,
+.school-list .mps,
+.sub-hero.mps .school-title {
+  color: var(--mps);
+}
+
+.school-card.mpc .school-tag,
+.school-list .mpc,
+.sub-hero.mpc .school-title {
+  color: var(--mpc);
+}
+
+.school-card.lvs {
+  border-top: 4px solid var(--lvs);
+}
+
+.school-card.lvc {
+  border-top: 4px solid var(--lvc);
+}
+
+.school-card.mps {
+  border-top: 4px solid var(--mps);
+}
+
+.school-card.mpc {
+  border-top: 4px solid var(--mpc);
 }
 
 .schedule {
