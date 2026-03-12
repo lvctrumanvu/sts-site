@@ -510,6 +510,10 @@ select {
 }
 
 @media (max-width: 720px) {
+  .page {
+    gap: 72px;
+  }
+
   .hero,
   .sub-hero {
     padding: 32px 6vw 60px;
@@ -517,6 +521,26 @@ select {
 
   .section {
     padding: 0 6vw;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-card {
+    width: 100%;
   }
 
   .contact-card {
@@ -530,6 +554,32 @@ select {
 
   .calendar-embed iframe {
     height: 520px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero {
+    padding: 28px 5vw 52px;
+  }
+
+  .sub-hero {
+    padding: 28px 5vw 48px;
+  }
+
+  .section {
+    padding: 0 5vw;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  .card-body h3 {
+    font-size: 1.4rem;
+  }
+
+  .calendar-embed iframe {
+    height: 440px;
   }
 }
 
